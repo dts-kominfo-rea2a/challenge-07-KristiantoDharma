@@ -6,10 +6,8 @@ const promiseOutput = async(emotion) => {
     const dataIXX = await promiseTheaterIXX();
     const dataVGC = await promiseTheaterVGC();
     const data = dataIXX.concat(dataVGC);
-    data.map((item) => {
-      item.hasil === emotion && (totalEmotion += 1)
-      return totalEmotion;
-    })
+    data.map(item => item.hasil === emotion && (totalEmotion += 1))
+    return totalEmotion;
   } catch (err) {
     return err
   }
